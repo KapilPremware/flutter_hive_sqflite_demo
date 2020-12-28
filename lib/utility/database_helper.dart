@@ -18,6 +18,7 @@ class DatabaseHelper {
 
   String dbName = "myDB.db";
   String tblNewsPost = "NewsPost";
+  String tblCounter = "Counter";
 
   DatabaseHelper._createInstance(); //Named constructor to create instance of DatabaseHelper
 
@@ -49,7 +50,7 @@ class DatabaseHelper {
   }
 
   void _createDb(Database db, int newVersion) async {
-    await db.execute('CREATE TABLE $tblNewsPost(postId TEXT, userId TEXT)');
+    await db.execute('CREATE TABLE $tblNewsPost(postId TEXT, userId TEXT, count REAL)');
   }
 
   //========================  Database  CRUD  OPERATIONS  ================================

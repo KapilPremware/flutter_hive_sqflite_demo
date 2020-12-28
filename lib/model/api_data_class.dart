@@ -13,7 +13,7 @@ class APIDataClass {
     return APIDataClass(
       Message: json['Message'] as String,
       IsSuccess: json['IsSuccess'] as bool,
-      Data: json['Data'] as String,
+      Data: json['Data'] as dynamic,
     );
   }
 }
