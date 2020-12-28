@@ -85,6 +85,7 @@ class _NewsPostState extends State<NewsPost> {
         print(data);
       }
     }
+
   }
 
   GetUerData(){
