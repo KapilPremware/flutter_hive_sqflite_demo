@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 //screen
 import 'package:flutter_hive_demo/screens/newsPost.dart';
 import 'package:flutter_hive_demo/screens/counter.dart';
+import 'package:flutter_hive_demo/screens/clap_counter.dart';
 
 void main() => runApp(MyApp());
 
@@ -15,6 +16,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => HomePage(),
         '/newsPost': (context) => NewsPost(),
         '/counter': (context) => Counter(),
+        '/clapCounter': (context) => ClapCounter(),
       },
     );
   }
@@ -49,6 +51,12 @@ class _HomePageState extends State<HomePage> {
                   Navigator.pushNamed(context, '/counter');
                 },
                 child: Text("Counter"),
+              ),
+              RaisedButton(
+                onPressed: (){
+                  Navigator.pushNamed(context, '/clapCounter');
+                },
+                child: Text("Clap Counter"),
               ),
               RaisedButton(
                 onPressed: (){
