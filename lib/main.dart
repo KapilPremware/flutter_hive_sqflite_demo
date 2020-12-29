@@ -35,24 +35,32 @@ class _HomePageState extends State<HomePage> {
       body: SingleChildScrollView(
         child: Container(
           padding: EdgeInsets.all(20),
-          child: Column(
+          child: Wrap(
+            spacing: 10,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  RaisedButton(
-                    onPressed: (){
-                      Navigator.pushNamed(context, '/newsPost');
-                    },
-                    child: Text("News Post"),
-                  ),
-                  RaisedButton(
-                    onPressed: (){
-                      Navigator.pushNamed(context, '/counter');
-                    },
-                    child: Text("Counter"),
-                  ),
-                ],
+              RaisedButton(
+                onPressed: (){
+                  Navigator.pushNamed(context, '/newsPost');
+                },
+                child: Text("News Post"),
+              ),
+              RaisedButton(
+                onPressed: (){
+                  Navigator.pushNamed(context, '/counter');
+                },
+                child: Text("Counter"),
+              ),
+              RaisedButton(
+                onPressed: (){
+                  Navigator.pushNamed(context, '/newsPost');
+                },
+                child: Text("Driver Log"),
+              ),
+              RaisedButton(
+                onPressed: (){
+                  Navigator.pushNamed(context, '/counter');
+                },
+                child: Text("Customer Log"),
               ),
             ],
           ),

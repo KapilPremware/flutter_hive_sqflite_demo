@@ -170,9 +170,9 @@ class _NewsPostState extends State<NewsPost> {
         children: [
           ListView.builder(
             itemCount: dataList.length,
-            padding: EdgeInsets.all(10),
+            padding: EdgeInsets.all(0),
             itemBuilder: (context, index) {
-              return Card(
+              return Material(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -200,13 +200,13 @@ class _NewsPostState extends State<NewsPost> {
                     ),
                     Image.network("${dataList[index]['img']}"),
                     Padding(
-                      padding: EdgeInsets.all(20),
+                      padding: EdgeInsets.all(10),
                       child: Column(
                         children: [
                           Text(
                             "${dataList[index]['desc']}",
                           ),
-                          SizedBox(height: 20),
+                          //SizedBox(height: 10),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -238,15 +238,16 @@ class _NewsPostState extends State<NewsPost> {
                                       }
                                     },
                                   ),
-                                  SizedBox(width: 20),
-                                  Icon(Icons.share),
+                                  //SizedBox(width: 20),
+                                  IconButton(icon: Icon(Icons.share), onPressed: (){}),
                                 ],
                               ),
                             ],
-                          )
+                          ),
                         ],
                       ),
                     ),
+                    Divider(thickness: 10),
                   ],
                 ),
               );
