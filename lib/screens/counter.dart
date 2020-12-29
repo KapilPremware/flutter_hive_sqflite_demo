@@ -69,6 +69,20 @@ class _CounterState extends State<Counter> {
                   }
                 },
               ),
+              RaisedButton(
+                child: Text("Task 1 : Counter $task3Count"),
+                onPressed: () async {
+                  SharedPreferences prefs =
+                  await SharedPreferences.getInstance();
+                  int counter = (prefs.getInt(Config.taskCounter3) ?? 0) + 1;
+                  if (counter <= 25) {
+                    await prefs.setInt(Config.taskCounter3, counter);
+                    setState(() {
+                      task3Count = counter;
+                    });
+                  }
+                },
+              ),
             ],
           ),
         ),
