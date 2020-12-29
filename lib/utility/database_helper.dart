@@ -20,6 +20,7 @@ class DatabaseHelper {
   String tblNewsPost = "NewsPost";
   String tblCounter = "Counter";
   String tblCustomerLog = "CustomerLog";
+  String tblDriverLog = "DriverLog";
 
   DatabaseHelper._createInstance(); //Named constructor to create instance of DatabaseHelper
 
@@ -53,6 +54,7 @@ class DatabaseHelper {
   void _createDb(Database db, int newVersion) async {
     await db.execute('CREATE TABLE $tblNewsPost(postId TEXT, userId TEXT, count REAL)');
     await db.execute('CREATE TABLE $tblCustomerLog(pickAddress TEXT, dropAddress TEXT, totalAmount REAL, totalWeight REAL, dateTime TEXT, customerId TEXT, vehicleId TEXT)');
+    await db.execute('CREATE TABLE $tblDriverLog(duty TEXT, date TEXT, driverId TEXT)');
   }
 
   //========================  Database  CRUD  OPERATIONS  ================================

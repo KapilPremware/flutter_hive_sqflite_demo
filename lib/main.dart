@@ -5,6 +5,7 @@ import 'package:flutter_hive_demo/screens/newsPost.dart';
 import 'package:flutter_hive_demo/screens/counter.dart';
 import 'package:flutter_hive_demo/screens/clap_counter.dart';
 import 'package:flutter_hive_demo/screens/customer_log.dart';
+import 'package:flutter_hive_demo/screens/driver_log.dart';
 
 void main() => runApp(MyApp());
 
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
         '/counter': (context) => Counter(),
         '/clapCounter': (context) => ClapCounter(),
         '/customerLog': (context) => CustomerLog(),
+        '/driverLog': (context) => DriverLog(),
       },
     );
   }
@@ -63,7 +65,7 @@ class _HomePageState extends State<HomePage> {
               ),
               RaisedButton(
                 onPressed: (){
-                  Navigator.pushNamed(context, '/newsPost');
+                  Navigator.pushNamed(context, '/driverLog');
                 },
                 child: Text("Driver Log"),
               ),
