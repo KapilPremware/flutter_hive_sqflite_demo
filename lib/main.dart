@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hive_demo/screens/newsPost.dart';
 import 'package:flutter_hive_demo/screens/counter.dart';
 import 'package:flutter_hive_demo/screens/clap_counter.dart';
+import 'package:flutter_hive_demo/screens/customer_log.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,11 +13,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "My App",
+      debugShowCheckedModeBanner: false,
       routes: {
         '/': (context) => HomePage(),
         '/newsPost': (context) => NewsPost(),
         '/counter': (context) => Counter(),
         '/clapCounter': (context) => ClapCounter(),
+        '/customerLog': (context) => CustomerLog(),
       },
     );
   }
@@ -66,7 +69,7 @@ class _HomePageState extends State<HomePage> {
               ),
               RaisedButton(
                 onPressed: (){
-                  Navigator.pushNamed(context, '/counter');
+                  Navigator.pushNamed(context, '/customerLog');
                 },
                 child: Text("Customer Log"),
               ),

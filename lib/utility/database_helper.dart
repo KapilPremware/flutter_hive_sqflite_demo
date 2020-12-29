@@ -19,6 +19,7 @@ class DatabaseHelper {
   String dbName = "myDB.db";
   String tblNewsPost = "NewsPost";
   String tblCounter = "Counter";
+  String tblCustomerLog = "CustomerLog";
 
   DatabaseHelper._createInstance(); //Named constructor to create instance of DatabaseHelper
 
@@ -51,6 +52,7 @@ class DatabaseHelper {
 
   void _createDb(Database db, int newVersion) async {
     await db.execute('CREATE TABLE $tblNewsPost(postId TEXT, userId TEXT, count REAL)');
+    await db.execute('CREATE TABLE $tblCustomerLog(pickAddress TEXT, dropAddress TEXT, totalAmount REAL, totalWeight REAL, dateTime TEXT, customerId TEXT, vehicleId TEXT)');
   }
 
   //========================  Database  CRUD  OPERATIONS  ================================
@@ -204,7 +206,7 @@ class DatabaseHelper {
     }
   }
 
-  Future<APIDataClass> insertRaw(String query, List<dynamic> arguments) async {
+  Future<APIDataClass> insertRaw(String query, [List<dynamic> arguments]) async {
     try {
       Database db = await this.database;
       await db.rawInsert(query, arguments);
@@ -224,7 +226,7 @@ class DatabaseHelper {
     }
   }
 
-  Future<APIDataClass> updateRaw(String query, List<dynamic> arguments) async {
+  Future<APIDataClass> updateRaw(String query, [List<dynamic> arguments]) async {
     try {
       Database db = await this.database;
       await db.rawUpdate(query, arguments);
@@ -244,7 +246,7 @@ class DatabaseHelper {
     }
   }
 
-  Future<APIDataClass> deleteRaw(String query, List<dynamic> arguments) async {
+  Future<APIDataClass> deleteRaw(String query, [List<dynamic> arguments]) async {
     try {
       Database db = await this.database;
       await db.rawDelete(query, arguments);
