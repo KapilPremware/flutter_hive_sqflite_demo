@@ -56,7 +56,7 @@ class _CounterState extends State<Counter> {
                 },
               ),
               RaisedButton(
-                child: Text("Task 1 : Counter $task2Count"),
+                child: Text("Task 2 : Counter $task2Count"),
                 onPressed: () async {
                   SharedPreferences prefs =
                       await SharedPreferences.getInstance();
@@ -70,7 +70,7 @@ class _CounterState extends State<Counter> {
                 },
               ),
               RaisedButton(
-                child: Text("Task 1 : Counter $task3Count"),
+                child: Text("Task 3 : Counter $task3Count"),
                 onPressed: () async {
                   SharedPreferences prefs =
                   await SharedPreferences.getInstance();
